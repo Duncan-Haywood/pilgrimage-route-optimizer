@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pilgrimage Route Optimizer
+
+A Phoenix LiveView application for optimizing pilgrimage routes, converted from Next.js to Phoenix and Elixir.
 
 ## Getting Started
 
-First, run the development server:
+To start your Phoenix server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  * Run `mix setup` to install and setup dependencies
+  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Phoenix LiveView**: Real-time, interactive web applications with server-side rendering
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **Elixir**: Functional programming language built on the Erlang VM
+- **Live Reload**: Automatic code reloading during development
+- **Heroicons**: Beautiful hand-crafted SVG icons
 
-## Learn More
+## Development
 
-To learn more about Next.js, take a look at the following resources:
+Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Learn more
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  * Official website: https://www.phoenixframework.org/
+  * Guides: https://hexdocs.pm/phoenix/overview.html
+  * Docs: https://hexdocs.pm/phoenix
+  * Forum: https://elixirforum.com/c/phoenix-forum
+  * Source: https://github.com/phoenixframework/phoenix
 
-## Deploy on Vercel
+## Migration from Next.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This application was originally built with Next.js and React, and has been converted to Phoenix LiveView:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **React Components** → **Phoenix LiveView & Components**
+- **Next.js Pages** → **Phoenix Routes & LiveViews**
+- **JavaScript State** → **Elixir GenServers & LiveView State**
+- **Next.js API Routes** → **Phoenix Controllers & Contexts**
+- **Tailwind CSS** → **Tailwind CSS** (preserved)
+- **Real-time Updates** → **Phoenix PubSub & LiveView**
