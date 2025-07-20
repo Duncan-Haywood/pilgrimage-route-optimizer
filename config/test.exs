@@ -7,7 +7,7 @@ import Config
 # Run `mix help test` for more information.
 config :pilgrimage_route_optimizer, PilgrimageRouteOptimizer.Repo,
   username: "postgres",
-  password: "postgres",
+  password: System.get_env("DATABASE_PASSWORD") || "postgres",
   hostname: "localhost",
   database: "pilgrimage_route_optimizer_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
@@ -17,7 +17,7 @@ config :pilgrimage_route_optimizer, PilgrimageRouteOptimizer.Repo,
 # you can enable the server option below.
 config :pilgrimage_route_optimizer, PilgrimageRouteOptimizerWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "VLPRMlhEyDJ0zQHmkJJVJQO7DGDgwCLMr5uqLNJqNc/8zQZQHfpFxGNnJWBfNOzJ",
+  secret_key_base: System.get_env("SECRET_KEY_BASE") || "test_secret_key_base_at_least_64_characters_long_for_testing_purposes_only",
   server: false
 
 # In test we don't send emails.

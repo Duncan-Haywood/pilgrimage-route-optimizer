@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :pilgrimage_route_optimizer, PilgrimageRouteOptimizer.Repo,
   username: "postgres",
-  password: "postgres",
+  password: System.get_env("DATABASE_PASSWORD") || "postgres",
   hostname: "localhost",
   database: "pilgrimage_route_optimizer_dev",
   stacktrace: true,
@@ -23,7 +23,10 @@ config :pilgrimage_route_optimizer, PilgrimageRouteOptimizerWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2g/cT10ZXN0K3NlY3JldCtmbGFnJnNhZmU9YWN0aXZl",
+  secret_key_base: System.get_env("SECRET_KEY_BASE") || raise("""
+    environment variable SECRET_KEY_BASE is missing.
+    You can generate one by calling: mix phx.gen.secret
+    """),
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:pilgrimage_route_optimizer, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:pilgrimage_route_optimizer, ~w(--watch)]}
